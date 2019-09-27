@@ -23,8 +23,6 @@ print 'hats', hats
 balls = joystick.get_numballs()
 print 'balls', balls
 
-index = 0
-
 
 # -------- Main Program Loop -----------
 while done==False:
@@ -43,10 +41,8 @@ while done==False:
         if event.type == pygame.JOYAXISMOTION:
             print "axies motion",event.axis, event.value
         if event.type == pygame.JOYHATMOTION:
-            print "hat motion"
+            print "hat motion",event.hat,event.value
 
-        
-        
         for i in range( axes ):
             axis = joystick.get_axis( i )
 
