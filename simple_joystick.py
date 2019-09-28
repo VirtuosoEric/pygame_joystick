@@ -27,6 +27,18 @@ print 'balls', balls
 # -------- Main Program Loop -----------
 while done==False:
     # EVENT PROCESSING STEP
+    for i in range( axes ):
+        axis = joystick.get_axis( i )
+
+    for i in range( buttons ):
+        button = joystick.get_button( i )
+
+    for i in range( hats ):
+        hat = joystick.get_hat( i )
+        
+    for i in range( balls ):
+        ball = joystick.get_ball(i)
+
     for event in pygame.event.get(): # User did something
         if event.type == pygame.QUIT: # If user clicked close
             done=True # Flag that we are done so we exit this loop
@@ -43,17 +55,7 @@ while done==False:
         if event.type == pygame.JOYHATMOTION:
             print "hat motion",event.hat,event.value
 
-        for i in range( axes ):
-            axis = joystick.get_axis( i )
-
-        for i in range( buttons ):
-            button = joystick.get_button( i )
-
-        for i in range( hats ):
-            hat = joystick.get_hat( i )
-
-        for i in range( balls ):
-            ball = joystick.get_ball(i)
+        
 
 pygame.quit ()
         
